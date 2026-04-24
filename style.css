@@ -1,0 +1,81 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at top, #1f2937, #030712);
+  color: #e5e7eb;
+}
+
+.container {
+  width: min(90vw, 760px);
+  background: rgba(17, 24, 39, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 1.2rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+}
+
+h1 { margin-top: 0; }
+
+.upload {
+  display: inline-flex;
+  margin: 0.5rem 0 1rem;
+}
+
+.upload input { display: none; }
+
+.upload span,
+button {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 0.65rem 1rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  align-items: end;
+  margin-bottom: 1rem;
+}
+
+.controls label {
+  display: grid;
+  gap: 0.3rem;
+  min-width: 260px;
+}
+
+canvas {
+  display: block;
+  width: min(100%, 512px);
+  aspect-ratio: 1;
+  margin: 0 auto;
+  border: 1px dashed rgba(255,255,255,0.2);
+  border-radius: 12px;
+  background:
+    linear-gradient(45deg, #111827 25%, transparent 25%),
+    linear-gradient(-45deg, #111827 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #111827 75%),
+    linear-gradient(-45deg, transparent 75%, #111827 75%);
+  background-size: 24px 24px;
+  background-position: 0 0, 0 12px, 12px -12px, -12px 0;
+}
+
+small { display: block; margin-top: 0.75rem; opacity: 0.8; }
