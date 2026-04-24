@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sticker Maker</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Sticker Maker</h1>
+      <p>Rasm yuklang, fonni olib tashlash uchun threshold ni sozlang, va stiker yuklab oling.</p>
+
+      <label class="upload">
+        <input id="imageInput" type="file" accept="image/*" />
+        <span>Rasm tanlash</span>
+      </label>
+
+      <section class="controls">
+        <label>
+          Oq fonni olib tashlash (threshold)
+          <input id="threshold" type="range" min="0" max="255" value="245" />
+        </label>
+        <button id="downloadBtn" disabled>PNG stiker yuklab olish</button>
+      </section>
+
+      <canvas id="canvas" width="512" height="512" aria-label="Sticker preview"></canvas>
+      <small>Output: 512x512 PNG (Telegram/WhatsApp sticker formatiga yaqin).</small>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
