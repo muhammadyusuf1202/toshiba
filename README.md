@@ -22,22 +22,26 @@ npm start
 
 Keyin brauzerda oching: <http://localhost:8080>
 
-## Serverga deploy (Render / Railway / VPS)
+## Render'ga deploy (aniq qadamlar)
 
-Bu repo endi deploy qilishga tayyor:
-- `server.js` (`PORT` env bilan ishlaydi)
-- `package.json` (`npm start`)
-- `Dockerfile`
+### Variant A: Dashboard orqali
+1. Kodni GitHub repo'ga push qiling.
+2. Render'da **New +** → **Web Service** ni bosing.
+3. GitHub repo'ni ulang.
+4. Quyidagilarni kiriting:
+   - **Environment**: `Node`
+   - **Build Command**: `npm install`
+   - **Start Command**: `npm start`
+   - **Health Check Path**: `/health`
+5. **Create Web Service** ni bosing.
 
-### Render misol
-1. Repo-ni GitHub'ga push qiling.
-2. Render'da **New Web Service** oching.
-3. Build command: `npm install`
-4. Start command: `npm start`
-5. Deploy qiling.
+### Variant B: render.yaml bilan (Blueprint)
+Repo ichida `render.yaml` bor. Render'da:
+1. **New +** → **Blueprint** ni tanlang.
+2. Shu repo'ni tanlang.
+3. Render avtomatik `render.yaml` bo'yicha service yaratadi.
 
 ## Muhim izoh
 
-Men bu chatdan to‘g‘ridan-to‘g‘ri sizning hosting akkauntingizga kirib deploy qila olmayman.
-Lekin yuqoridagi konfiguratsiya bilan siz 2-3 daqiqada serverga chiqarishingiz mumkin.
-Agar xohlasangiz, keyingi xabarda aynan qaysi platformaga (Render, Railway, VPS, Vercel) qadamma-qadam aniq buyruqlarni beraman.
+Men bu chatdan to‘g‘ridan-to‘g‘ri sizning Render akkauntingizga kirib deploy qila olmayman.
+Lekin yuqoridagi konfiguratsiya bilan siz tezda deploy qilasiz.
